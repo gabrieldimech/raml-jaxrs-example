@@ -1,0 +1,63 @@
+#%RAML 0.8
+title: Customers
+version: 1.0
+#baseUri: http://localhost:8081
+baseUri: http://mocksvc.mulesoft.com/mocks/2ef1f64e-e628-4238-bdcf-18fda2766aee
+
+schemas:
+  - customer: |
+      {  "$schema": "http://json-schema.org/draft-03/schema",
+         "type": "object",
+         "description": "A single customer",
+         "properties": {
+           "id":  { "type": "string", "required": true },
+           "name":  { "type": "string", "required": true },
+           "surname":  { "type": "string", "required": true }
+         }
+      }
+  - customers: |
+      {  "$schema": "http://json-schema.org/draft-03/schema",
+         "type": "object",
+         "description": "A collection customers",
+         "properties": {
+           "size":  { "type": "integer", "required": true },
+           "customers":  {
+              "type": "array",
+              "items": { "$ref": "customer" }
+           }
+         }
+      }
+/customers:
+  get:
+    description: return list of customers
+    responses:
+      200:
+        body:
+          application/json:
+            schema: customers
+            example: |
+              [{
+                  name: "lewis",
+                  surname: "hamilton",
+                  id: "123"
+                },
+                {
+                  name: "nico",
+                  surname: "rosberg",
+                  id: "124"
+                }
+              ]
+  /{customer_id}:
+    put:
+      description: add/replace a customer
+      responses:
+        200:
+          body:
+            application/json:
+              schema: customer
+              example: |
+                {
+                    name: "lewis",
+                    surname: "hamilton",
+                    id: "123"
+                }
