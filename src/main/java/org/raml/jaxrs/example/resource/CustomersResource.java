@@ -54,13 +54,13 @@ public interface CustomersResource {
 
         /**
          *  e.g. [{
-         *     name: "jeff",
-         *     surname: "cassar",
+         *     name: "lewis",
+         *     surname: "hamilton",
          *     id: "123"
          *   },
          *   {
-         *     name: "caroline",
-         *     surname: "paris",
+         *     name: "nico",
+         *     surname: "rosberg",
          *     id: "124"
          *   }
          * ]
@@ -68,13 +68,13 @@ public interface CustomersResource {
          * 
          * @param entity
          *     [{
-         *         name: "jeff",
-         *         surname: "cassar",
+         *         name: "lewis",
+         *         surname: "hamilton",
          *         id: "123"
          *       },
          *       {
-         *         name: "caroline",
-         *         surname: "paris",
+         *         name: "nico",
+         *         surname: "rosberg",
          *         id: "124"
          *       }
          *     ]
@@ -99,15 +99,15 @@ public interface CustomersResource {
 
         /**
          *  e.g. {
-         *     name: "jeff",
-         *     surname: "cassar",
+         *     name: "lewis",
+         *     surname: "hamilton",
          *     id: "123"
          * }
          * 
          * @param entity
          *     {
-         *         name: "jeff",
-         *         surname: "cassar",
+         *         name: "lewis",
+         *         surname: "hamilton",
          *         id: "123"
          *     }
          */
